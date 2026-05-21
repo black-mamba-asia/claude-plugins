@@ -1,0 +1,14 @@
+{
+  "name": "Black Mamba Asia Marketplace",
+  "owner": {
+    "name": "Black Mamba Asia"
+  },
+  "plugins": [
+    {
+      "name": "buatkan",
+      "source": "./buatkan",
+      "description": "Buatkan changelog otomatis",
+      "version": "1.0.0"
+    }
+  ]
+}

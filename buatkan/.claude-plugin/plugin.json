@@ -1,0 +1,10 @@
+{
+  "name": "buatkan",
+  "description": "Buatkan changelog otomatis",
+  "version": "1.0.0",
+  "author": {
+    "name": "Black Mamba Asia"
+  },
+  "homepage": "https://black.mamba.asia",
+  "repository": "https://github.com/black-mamba-asia/claude-plugins"
+}
