@@ -1,3 +1,8 @@
+---
+name: sp-estimate
+description: Generate estimasi Story Point dari PRD atau deskripsi task, berdasarkan standar tim. Menghasilkan 3 perspektif: jam tim, SP industri (Fibonacci), dan estimasi AI.
+---
+
 # SP Estimate — Story Point Estimator
 
 Generate estimasi Story Point dari PRD atau deskripsi task, berdasarkan standar tim.
