@@ -9,6 +9,12 @@
       "source": "./buatkan",
       "description": "Buatkan changelog otomatis",
       "version": "1.0.0"
+    },
+    {
+      "name": "sp-estimate",
+      "source": "./sp-estimate",
+      "description": "Estimasi waktu pengerjaan tugas",
+      "version": "1.0.0"
     }
   ]
 }
