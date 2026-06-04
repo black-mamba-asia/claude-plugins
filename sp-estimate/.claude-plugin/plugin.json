@@ -1,0 +1,10 @@
+{
+  "name": "sp-estimate",
+  "description": "Story Point estimator berdasarkan standar tim ESB/ESO — analisa PRD atau deskripsi task menjadi estimasi 3 perspektif (jam, SP industri, AI).",
+  "version": "1.0.0",
+  "author": {
+    "name": "Black Mamba Asia"
+  },
+  "homepage": "https://black.mamba.asia",
+  "repository": "https://github.com/black-mamba-asia/claude-plugins"
+}
