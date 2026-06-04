@@ -2,39 +2,43 @@
 
 Plugin Claude Code untuk estimasi Story Point dari PRD atau deskripsi task, berdasarkan standar tim ESB/ESO.
 
-## Skills
-
-| Command | Kegunaan |
-|---|---|
-| `/sp-estimate <deskripsi>` | Estimasi SP dari deskripsi task, user story, atau PRD |
-
 ## Instalasi
 
-### Option 1: Install ke project (direkomendasikan untuk tim)
+### Langsung dari GitHub (paling mudah)
 
 ```bash
-claude plugin add ./sp-estimate --project
+# Global — aktif di semua project
+claude plugin add github:black-mamba-asia/claude-plugins/spestimate
+
+# Per-project saja
+claude plugin add github:black-mamba-asia/claude-plugins/spestimate --project
 ```
 
-Tambahkan ke `.claude/settings.json` agar otomatis aktif untuk semua anggota tim:
+### Untuk seluruh tim via settings.json
+
+Clone repo sekali, lalu daftarkan di `.claude/settings.json` project:
+
+```bash
+git clone https://github.com/black-mamba-asia/claude-plugins
+```
 
 ```json
 {
-  "plugins": ["./sp-estimate"]
+  "plugins": ["./claude-plugins/spestimate"]
 }
 ```
 
-Commit `.claude/settings.json` ke git, dan tambahkan ini ke `.gitignore`:
+Commit `settings.json` ke git agar aktif otomatis untuk semua anggota tim. Tambahkan ke `.gitignore`:
 
 ```
 .claude/settings.local.json
 ```
 
-### Option 2: Install global (untuk semua project)
+## Skills
 
-```bash
-claude plugin add ./sp-estimate
-```
+| Command | Kegunaan |
+|---|---|
+| `/sp-estimate <deskripsi>` | Estimasi SP dari deskripsi task, user story, atau PRD |
 
 ## Contoh Penggunaan
 
@@ -65,7 +69,7 @@ Lengkap dengan breakdown per task, analisa kompleksitas, dan confidence level.
 ## Struktur Plugin
 
 ```
-sp-estimate/
+spestimate/
 ├── .claude-plugin/
 │   └── plugin.json          # Manifest plugin
 ├── skills/
@@ -74,6 +78,18 @@ sp-estimate/
 └── README.md
 ```
 
-## Pengembangan
+## Update Plugin
 
-Untuk modifikasi referensi SP atau skala tim, edit file `skills/sp-estimate/SKILL.md`, lalu jalankan `/reload-plugins` di dalam sesi Claude Code.
+```bash
+claude plugin update sp-estimate
+```
+
+Atau jika install via clone:
+
+```bash
+git -C ./claude-plugins pull
+```
+
+## Modifikasi Referensi SP
+
+Edit [skills/sp-estimate/SKILL.md](./skills/sp-estimate/SKILL.md) untuk menyesuaikan skala tim, lalu jalankan `/reload-plugins` di dalam sesi Claude Code.

@@ -6,13 +6,30 @@ Kumpulan plugin Claude Code dari [Black Mamba Asia](https://black.mamba.asia).
 
 | Plugin | Versi | Deskripsi |
 |--------|-------|-----------|
+| [sp-estimate](./spestimate) | 1.0.0 | Estimasi Story Point dari PRD atau deskripsi task |
 | [buatkan](./buatkan) | 1.0.0 | Otomatisasi dokumentasi project (changelog, dll) |
 
-## Instalasi
+## Instalasi Cepat
 
-### Per-project (direkomendasikan untuk tim)
+### sp-estimate
 
-Clone repo ini, lalu tambahkan plugin yang diinginkan ke `.claude/settings.json` project kamu:
+```bash
+# Install global (langsung dari GitHub)
+claude plugin add github:black-mamba-asia/claude-plugins/spestimate
+
+# Atau install ke project tertentu
+claude plugin add github:black-mamba-asia/claude-plugins/spestimate --project
+```
+
+### buatkan
+
+```bash
+claude plugin add github:black-mamba-asia/claude-plugins/buatkan
+```
+
+### Untuk tim (via settings.json)
+
+Clone repo ini sekali, lalu daftarkan plugin ke `.claude/settings.json` project:
 
 ```bash
 git clone https://github.com/black-mamba-asia/claude-plugins
@@ -20,25 +37,34 @@ git clone https://github.com/black-mamba-asia/claude-plugins
 
 ```json
 {
-  "plugins": ["./claude-plugins/buatkan"]
+  "plugins": [
+    "./claude-plugins/spestimate",
+    "./claude-plugins/buatkan"
+  ]
 }
 ```
 
-Commit `settings.json` ke git agar plugin aktif otomatis untuk seluruh tim. Tambahkan ke `.gitignore`:
+Commit `settings.json` agar aktif otomatis untuk seluruh tim. Tambahkan ke `.gitignore`:
 
 ```
 .claude/settings.local.json
 ```
 
-### Global (semua project)
-
-```bash
-claude plugin add ./buatkan
-```
-
 ---
 
 ## Daftar Plugin
+
+### sp-estimate
+
+Estimasi Story Point dari task description, user story, atau PRD — menghasilkan 3 perspektif (jam tim, SP industri, estimasi AI).
+
+| Skill | Command | Kegunaan |
+|-------|---------|----------|
+| sp-estimate | `/sp-estimate <deskripsi>` | Estimasi SP dari deskripsi task atau PRD |
+
+Lihat [spestimate/README.md](./spestimate/README.md) untuk detail penggunaan.
+
+---
 
 ### buatkan
 
