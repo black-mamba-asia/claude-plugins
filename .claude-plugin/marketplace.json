@@ -12,7 +12,7 @@
     },
     {
       "name": "sp-estimate",
-      "source": "./sp-estimate",
+      "source": "./spestimate",
       "description": "Estimasi waktu pengerjaan tugas",
       "version": "1.0.0"
     }
